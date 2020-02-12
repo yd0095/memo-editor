@@ -10,11 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var name = ["a","b","c"]
-    var image = ["1.jpeg","2.jpeg","3.jpeg"]
+    //추후 db에서 받아와야함.
+    //label을 text field로 바꿔야 할듯?
+    //TODO
+    var cellTitle = ["title1","title2","title3"]
+    var cellContents = ["a","b","c"]
+    var cellImage = ["1.jpeg","2.jpeg","3.jpeg"]
     
     
     @IBOutlet weak var tableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,23 +29,76 @@ class ViewController: UIViewController {
         
         
     }
+    
+    @IBAction func addBtn(_ sender: UIBarButtonItem) {
+        
+        let alertController = UIAlertController(title: "title", message: "제목입력 ", preferredStyle: .alert)
+               alertController.addTextField(configurationHandler: {
+               (textField) in textField.placeholder = "제목 입력 "
+               })
+               
+        //확인 했을 때 메모장으로 넘어가는 Action 추가 TODO
+               let confirmAction = UIAlertAction(title: "확인", style: .default){
+                   _ in
+                   let textField = alertController.textFields![0]
+                   if let newName = textField.text, !newName.isEmpty {
+                        print(newName)
+                       self.cellTitle.append(newName)
+                       let indexPath = IndexPath(row: self.cellTitle.count - 1, section: 0)
+                       self.tableView.insertRows(at: [indexPath], with: .automatic)
+                   }
+               }
+               let cancelAction = UIAlertAction(title:"취소",style: .cancel){
+                   _ in
+               }
+               alertController.addAction(confirmAction)
+               alertController.addAction(cancelAction)
+               
+               self.present(alertController, animated: true, completion: nil)
+    }
+    @IBAction func delBtn(_ sender: UIBarButtonItem) {
+        
+        if tableView.isEditing {
+            sender.title = "Edit"
+            tableView.setEditing(false, animated: true)
+        } else {
+            sender.title = "Done"
+            tableView.setEditing(true, animated: true)
+        }
+    }
+    
 }
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return name.count
+        return cellTitle.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableCell
-        cell.cellImage.image = UIImage(named: image[indexPath.row])
-        cell.title.text = name[indexPath.row]
-        cell.contents.text = name[indexPath.row]
+        
+        //추후 존재하지 않는 조건부로 변경 TODO
+        if indexPath.row < 3 {
+            cell.cellImage.image = UIImage(named: cellImage[indexPath.row])
+            cell.title.text = cellTitle[indexPath.row]
+            cell.contents.text = cellContents[indexPath.row]
+        }
+        else {
+            cell.cellImage.image = UIImage(named: cellImage[0])
+            cell.title.text = cellTitle[indexPath.row]
+            cell.contents.text = cellContents[0]
+        }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            //다른 항목 지우는 조건부추가 TODO
+            cellTitle.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
     
 }
