@@ -83,11 +83,28 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="nEE-sw-NKq" id="beN-Gq-Dfw"/>
+                        <segue destination="Qh9-M8-0sw" kind="show" identifier="ToTextView" id="EXR-pc-wXR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1128.75" y="138.38028169014083"/>
+        </scene>
+        <!--Text View Controller-->
+        <scene sceneID="Cur-mI-jOj">
+            <objects>
+                <viewController id="Qh9-M8-0sw" customClass="TextViewController" customModule="editor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zEh-HY-WKz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Fzd-F4-qoA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZSE-lQ-a9a"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eTw-r4-rui" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2156" y="138"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ypl-YY-O3N">

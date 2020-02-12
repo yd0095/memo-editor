@@ -37,15 +37,16 @@ class ViewController: UIViewController {
                (textField) in textField.placeholder = "제목 입력 "
                })
                
-        //확인 했을 때 메모장으로 넘어가는 Action 추가 TODO
+        //확인 했을 때 다음으로 넘어가는 Action 추가 TODO
                let confirmAction = UIAlertAction(title: "확인", style: .default){
                    _ in
                    let textField = alertController.textFields![0]
                    if let newName = textField.text, !newName.isEmpty {
-                        print(newName)
-                       self.cellTitle.append(newName)
-                       let indexPath = IndexPath(row: self.cellTitle.count - 1, section: 0)
-                       self.tableView.insertRows(at: [indexPath], with: .automatic)
+                    self.cellTitle.append(newName)
+                    let indexPath = IndexPath(row: self.cellTitle.count - 1, section: 0)
+                    self.tableView.insertRows(at: [indexPath], with: .automatic)
+                    self.performSegue(withIdentifier: "ToTextView", sender: self)
+                
                    }
                }
                let cancelAction = UIAlertAction(title:"취소",style: .cancel){

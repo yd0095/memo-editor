@@ -18,6 +18,7 @@
 		B948277723F3B169006E4EBD /* 1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B948277623F3B169006E4EBD /* 1.jpeg */; };
 		B948277923F3B172006E4EBD /* 2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B948277823F3B172006E4EBD /* 2.jpeg */; };
 		B948277B23F3B17A006E4EBD /* 3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B948277A23F3B17A006E4EBD /* 3.jpeg */; };
+		B948277D23F3C72A006E4EBD /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948277C23F3C72A006E4EBD /* TextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		B948277623F3B169006E4EBD /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpeg; sourceTree = "<group>"; };
 		B948277823F3B172006E4EBD /* 2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpeg; sourceTree = "<group>"; };
 		B948277A23F3B17A006E4EBD /* 3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpeg; sourceTree = "<group>"; };
+		B948277C23F3C72A006E4EBD /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				B948274323F3A04A006E4EBD /* AppDelegate.swift */,
-				B948274723F3A04A006E4EBD /* ViewController.swift */,
 				B948274923F3A04A006E4EBD /* Main.storyboard */,
+				B948274723F3A04A006E4EBD /* ViewController.swift */,
+				B948277C23F3C72A006E4EBD /* TextViewController.swift */,
 				B948277323F3AF55006E4EBD /* TableCell.swift */,
 				B948274C23F3A04A006E4EBD /* Assets.xcassets */,
 				B948274E23F3A04A006E4EBD /* LaunchScreen.storyboard */,
@@ -282,6 +285,7 @@
 				B948277423F3AF55006E4EBD /* TableCell.swift in Sources */,
 				B948274823F3A04A006E4EBD /* ViewController.swift in Sources */,
 				B948274423F3A04A006E4EBD /* AppDelegate.swift in Sources */,
+				B948277D23F3C72A006E4EBD /* TextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
