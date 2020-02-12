@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         
         let alertController = UIAlertController(title: "title", message: "제목입력 ", preferredStyle: .alert)
                alertController.addTextField(configurationHandler: {
-               (textField) in textField.placeholder = "제목: "
+               (textField) in textField.placeholder = "제목 입력 "
                })
                
         //확인 했을 때 메모장으로 넘어가는 Action 추가 TODO
@@ -55,6 +55,16 @@ class ViewController: UIViewController {
                alertController.addAction(cancelAction)
                
                self.present(alertController, animated: true, completion: nil)
+    }
+    @IBAction func delBtn(_ sender: UIBarButtonItem) {
+        
+        if tableView.isEditing {
+            sender.title = "Edit"
+            tableView.setEditing(false, animated: true)
+        } else {
+            sender.title = "Done"
+            tableView.setEditing(true, animated: true)
+        }
     }
     
 }
@@ -81,6 +91,14 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            //다른 항목 지우는 조건부추가 TODO
+            cellTitle.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
     
 }
