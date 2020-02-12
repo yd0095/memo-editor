@@ -42,10 +42,10 @@ class ViewController: UIViewController {
                    _ in
                    let textField = alertController.textFields![0]
                    if let newName = textField.text, !newName.isEmpty {
-                    self.cellTitle.append(newName)
-                    let indexPath = IndexPath(row: self.cellTitle.count - 1, section: 0)
-                    self.tableView.insertRows(at: [indexPath], with: .automatic)
-                    self.performSegue(withIdentifier: "ToTextView", sender: self)
+                        self.cellTitle.append(newName)
+                        let indexPath = IndexPath(row: self.cellTitle.count - 1, section: 0)
+                        self.tableView.insertRows(at: [indexPath], with: .automatic)
+                        self.performSegue(withIdentifier: "ToTextView", sender: self)
                 
                    }
                }
@@ -91,6 +91,17 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
             cell.contents.text = cellContents[0]
         }
         
+       
+        cell.addButtonAction = {
+            contentView -> () in
+            
+            let cell = contentView?.superview as! UITableViewCell
+            //내가 선택한 cell이 몇번째인지!! 처리할것 TODO
+            let indexPath = tableView.indexPath(for: cell)
+            
+            self.performSegue(withIdentifier: "ToTextView", sender: self)
+        }
+        
         return cell
     }
     
@@ -101,6 +112,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
+    
     
 }
 
