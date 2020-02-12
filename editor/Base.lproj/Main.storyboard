@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="editor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nEE-sw-NKq">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="yFH-ZP-y3P" customClass="TableCell" customModule="editor" customModuleProvider="target">
@@ -103,12 +103,24 @@
             <objects>
                 <viewController id="Qh9-M8-0sw" customClass="TextViewController" customModule="editor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zEh-HY-WKz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Fzd-F4-qoA"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZSE-lQ-a9a"/>
+                    <navigationItem key="navigationItem" id="ZSE-lQ-a9a">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Fea-K2-fza">
+                            <connections>
+                                <action selector="backBtn:" destination="Qh9-M8-0sw" id="crA-aX-kSJ"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="ToList" id="ZjX-7V-vkT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="n53-cA-ZGu">
+                            <connections>
+                                <action selector="saveBtn:" destination="Qh9-M8-0sw" id="HKn-fC-cgc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eTw-r4-rui" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -133,4 +145,7 @@
             <point key="canvasLocation" x="131.25" y="138.38028169014083"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZjX-7V-vkT"/>
+    </inferredMetricsTieBreakers>
 </document>
