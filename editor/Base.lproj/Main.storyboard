@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="editor" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,7 +69,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ppd-Vd-Ljo"/>
+                    <navigationItem key="navigationItem" title="Title" id="i7I-Cp-u7w">
+                        <barButtonItem key="rightBarButtonItem" title="add" id="wp0-rP-mEN">
+                            <connections>
+                                <action selector="addBtn:" destination="BYZ-38-t0r" id="ujb-fv-F56"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="nEE-sw-NKq" id="beN-Gq-Dfw"/>
                     </connections>
