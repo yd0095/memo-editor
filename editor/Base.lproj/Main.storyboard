@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qjW-RZ-LC3">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -13,18 +13,18 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="editor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nEE-sw-NKq">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="yFH-ZP-y3P" customClass="TableCell" customModule="editor" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yFH-ZP-y3P" id="9dd-gc-RCA">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b9G-YX-YfY">
@@ -101,18 +101,20 @@
         <!--Text View Controller-->
         <scene sceneID="Cur-mI-jOj">
             <objects>
-                <viewController id="Qh9-M8-0sw" customClass="TextViewController" customModule="editor" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zEh-HY-WKz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <viewController definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" modalPresentationStyle="overCurrentContext" id="Qh9-M8-0sw" customClass="TextViewController" customModule="editor" customModuleProvider="target" sceneMemberID="viewController">
+                    <textView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="H3S-YH-QOR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="Fzd-F4-qoA"/>
-                    </view>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
                     <navigationItem key="navigationItem" id="ZSE-lQ-a9a">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="Fea-K2-fza">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="UTz-ML-La5">
                             <connections>
-                                <action selector="backBtn:" destination="Qh9-M8-0sw" id="crA-aX-kSJ"/>
-                                <segue destination="BYZ-38-t0r" kind="show" identifier="ToList" id="ZjX-7V-vkT"/>
+                                <action selector="backBtn:" destination="Qh9-M8-0sw" id="emA-Ak-tKb"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="n53-cA-ZGu">
@@ -124,15 +126,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eTw-r4-rui" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2156" y="138"/>
+            <point key="canvasLocation" x="2153.90625" y="137.04245973645681"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ypl-YY-O3N">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qjW-RZ-LC3" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Whd-wh-yeY"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G2e-ot-QrC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -145,7 +148,4 @@
             <point key="canvasLocation" x="131.25" y="138.38028169014083"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="ZjX-7V-vkT"/>
-    </inferredMetricsTieBreakers>
 </document>
