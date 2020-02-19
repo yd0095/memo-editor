@@ -9,7 +9,27 @@
 import UIKit
 
 class TextViewController : UIViewController {
+    
+    @IBOutlet weak var titleField: UITextField!
+    @IBOutlet weak var contentField: UITextView!
 
+    var titleTmp : String = ""
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        contentField.layer.borderWidth = 1.0
+        contentField.layer.borderColor = UIColor.black.cgColor
+        contentField.layer.cornerRadius = 10
+        contentField.backgroundColor = .white
+        titleField.text = titleTmp
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
     
     @IBAction func backBtn(_ sender: UIBarButtonItem) {
         

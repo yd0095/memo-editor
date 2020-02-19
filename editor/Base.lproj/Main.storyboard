@@ -88,16 +88,71 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1127.536231884058" y="137.94642857142856"/>
+            <point key="canvasLocation" x="1175.3623188405797" y="162.72321428571428"/>
         </scene>
         <!--Text View Controller-->
         <scene sceneID="Cur-mI-jOj">
             <objects>
                 <viewController definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" modalPresentationStyle="overCurrentContext" id="Qh9-M8-0sw" customClass="TextViewController" customModule="editor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0KF-SP-FVw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Aq-KS-t77">
+                                <rect key="frame" x="0.0" y="88" width="414" height="1212"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkW-h2-8Xj">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1212"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="본문" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zZq-sk-1IT">
+                                                <rect key="frame" x="8" y="125" width="398" height="1087"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1087" id="WS5-2I-cxM"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PSG-8A-24E">
+                                                <rect key="frame" x="8" y="56" width="398" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="X6G-Fc-uNV"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="zZq-sk-1IT" secondAttribute="trailing" constant="8" id="1QT-My-vw0"/>
+                                            <constraint firstItem="PSG-8A-24E" firstAttribute="leading" secondItem="mkW-h2-8Xj" secondAttribute="leading" constant="8" id="3N4-dO-Dci"/>
+                                            <constraint firstItem="zZq-sk-1IT" firstAttribute="leading" secondItem="mkW-h2-8Xj" secondAttribute="leading" constant="8" id="7oy-pS-KfL"/>
+                                            <constraint firstItem="PSG-8A-24E" firstAttribute="top" secondItem="mkW-h2-8Xj" secondAttribute="top" constant="56" id="HbO-Iv-HEO"/>
+                                            <constraint firstAttribute="trailing" secondItem="PSG-8A-24E" secondAttribute="trailing" constant="8" id="izn-Gp-w5q"/>
+                                            <constraint firstItem="zZq-sk-1IT" firstAttribute="top" secondItem="PSG-8A-24E" secondAttribute="bottom" constant="35" id="svW-9L-mX2"/>
+                                            <constraint firstAttribute="bottom" secondItem="zZq-sk-1IT" secondAttribute="bottom" id="zeZ-Ta-PtF"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="mkW-h2-8Xj" firstAttribute="width" secondItem="5Aq-KS-t77" secondAttribute="width" id="4F8-YQ-2XF"/>
+                                    <constraint firstAttribute="trailing" secondItem="mkW-h2-8Xj" secondAttribute="trailing" id="GWe-zx-kCZ"/>
+                                    <constraint firstItem="mkW-h2-8Xj" firstAttribute="leading" secondItem="5Aq-KS-t77" secondAttribute="leading" id="WhJ-xB-fad"/>
+                                    <constraint firstItem="mkW-h2-8Xj" firstAttribute="centerX" secondItem="5Aq-KS-t77" secondAttribute="centerX" id="aS4-4e-7Ay"/>
+                                    <constraint firstItem="mkW-h2-8Xj" firstAttribute="top" secondItem="5Aq-KS-t77" secondAttribute="top" id="b1v-l4-I9n"/>
+                                    <constraint firstAttribute="bottom" secondItem="mkW-h2-8Xj" secondAttribute="bottom" id="dxH-SE-b3l"/>
+                                    <constraint firstItem="mkW-h2-8Xj" firstAttribute="height" secondItem="5Aq-KS-t77" secondAttribute="height" id="flI-b7-6s8"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5Aq-KS-t77" firstAttribute="trailing" secondItem="SyK-te-ffr" secondAttribute="trailing" id="5RE-9M-Tfw"/>
+                            <constraint firstItem="5Aq-KS-t77" firstAttribute="leading" secondItem="SyK-te-ffr" secondAttribute="leading" id="QBf-0N-Ger"/>
+                            <constraint firstItem="5Aq-KS-t77" firstAttribute="top" secondItem="SyK-te-ffr" secondAttribute="top" id="dMv-KE-ReL"/>
+                            <constraint firstAttribute="bottom" secondItem="5Aq-KS-t77" secondAttribute="bottom" id="seY-zW-meq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="SyK-te-ffr"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZSE-lQ-a9a">
@@ -112,6 +167,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <size key="freeformSize" width="414" height="1300"/>
+                    <connections>
+                        <outlet property="contentField" destination="zZq-sk-1IT" id="a0R-K7-dGI"/>
+                        <outlet property="titleField" destination="PSG-8A-24E" id="yPN-el-s5Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eTw-r4-rui" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -20,6 +20,9 @@ class ViewController: UIViewController {
     
     var text: [NSManagedObject] = []
     
+    var titleTmpInViewController: String = ""
+    
+    
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -44,11 +47,12 @@ class ViewController: UIViewController {
                    _ in
                    let textField = alertController.textFields![0]
                    if let newName = textField.text, !newName.isEmpty {
+                        self.titleTmpInViewController = newName
                         self.cellTitle.insert(newName, at: 0)
                         let indexPath = IndexPath(row: 0, section: 0)
                         self.tableView.insertRows(at: [indexPath], with: .automatic)
                         self.performSegue(withIdentifier: "ToTextView", sender: self)
-                
+                       
                    }
                }
                let cancelAction = UIAlertAction(title:"취소",style: .cancel){
@@ -115,6 +119,16 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         
         
         self.performSegue(withIdentifier: "ToTextView", sender: self)
+    }
+    
+}
+extension ViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToTextView" {
+            guard let toText = segue.destination as? TextViewController else { return }
+            toText.titleTmp = titleTmpInViewController
+        }
     }
     
 }
