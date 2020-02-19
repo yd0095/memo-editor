@@ -15,6 +15,7 @@ class ViewController: UIViewController {
 
     var titleTmpInViewController: String = ""
     
+    var whichRow = -1
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -42,6 +43,8 @@ class ViewController: UIViewController {
           print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
+    
+    
     
     @IBAction func addBtn(_ sender: UIBarButtonItem) {
 
@@ -89,6 +92,8 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+       // let appDataCnt = app.count - indexPath.row - 1
+        //let appData = app[appDataCnt]
         let appData = app[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableCell
@@ -118,23 +123,24 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableCell
-//        //내가 선택한 cell이 몇번째인지!! 처리할것 TODO
-//        let indexPath = tableView.indexPath(for: cell)
-        
-        
-        self.performSegue(withIdentifier: "ToTextView", sender: self)
+        whichRow = indexPath.row
+        self.performSegue(withIdentifier: "ToTextView2", sender: self)
     }
     
 }
 extension ViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ToTextView" {
-            guard let toText = segue.destination as? TextViewController else { return }
-            toText.titleTmp = titleTmpInViewController
+            if segue.identifier == "ToTextView" {
+                guard let toText = segue.destination as? TextViewController else { return }
+                toText.titleTmp = titleTmpInViewController
+            }
+            else if segue.identifier == "ToTextView2" {
+                guard let toText = segue.destination as? TextViewController else { return }
+                toText.whichRow = self.whichRow
+                self.whichRow = -1
+            }
         }
-    }
-    
+        
 }
 

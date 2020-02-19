@@ -84,6 +84,7 @@
                     <connections>
                         <outlet property="tableView" destination="nEE-sw-NKq" id="beN-Gq-Dfw"/>
                         <segue destination="Qh9-M8-0sw" kind="show" identifier="ToTextView" id="EXR-pc-wXR"/>
+                        <segue destination="Qh9-M8-0sw" kind="show" identifier="ToTextView2" id="kEP-TT-GZV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -197,4 +198,7 @@
             <point key="canvasLocation" x="131.25" y="138.38028169014083"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kEP-TT-GZV"/>
+    </inferredMetricsTieBreakers>
 </document>

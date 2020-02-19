@@ -18,6 +18,8 @@ class TextViewController : UIViewController {
 
     var titleTmp : String = ""
     
+    var whichRow : Int = -1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,13 +27,29 @@ class TextViewController : UIViewController {
         contentField.layer.borderColor = UIColor.black.cgColor
         contentField.layer.cornerRadius = 10
         contentField.backgroundColor = .white
-        titleField.text = titleTmp
+        
+        //fetch
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "AppData")
+        do {
+          app = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+          print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
+        if whichRow == -1 {
+            titleField.text = titleTmp
+        } else {
+            let appData = app[whichRow]
+            titleField.text = appData.value(forKey: "title") as? String
+            contentField.text = appData.value(forKey: "content") as? String
+        }
     }
     
     @IBAction func backBtn(_ sender: UIBarButtonItem) {
@@ -56,17 +74,34 @@ class TextViewController : UIViewController {
     }
     
     func save(title: String, content: String) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "AppData", in: managedContext)
-        let appData = NSManagedObject(entity: entity!, insertInto: managedContext)
-        appData.setValue(title, forKey: "title")
-        appData.setValue(content, forKey: "content")
-        
+
         do {
-            try managedContext.save()
-            app.append(appData)
+            if whichRow == -1 {
+                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                let managedContext = appDelegate.persistentContainer.viewContext
+                let entity = NSEntityDescription.entity(forEntityName: "AppData", in: managedContext)
+                let appData = NSManagedObject(entity: entity!, insertInto: managedContext)
+                appData.setValue(title, forKey: "title")
+                appData.setValue(content, forKey: "content")
+                
+                try managedContext.save()
+            }
+            else {
+                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                let managedContext = appDelegate.persistentContainer.viewContext
+                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "AppData")
+         
+                do {
+                    let results = try managedContext.fetch(fetchRequest) as? [NSManagedObject]
+                    
+                    if results?.count != 0 {
+                        results![whichRow].setValue(title, forKey: "title")
+                        results![whichRow].setValue(content, forKey: "content")
+                    }
+                    
+                }
             
+            }
         } catch let error as NSError {
             print("Not Saved. \(error)")
         }
