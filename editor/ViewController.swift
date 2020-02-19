@@ -11,15 +11,8 @@ import CoreData
 
 class ViewController: UIViewController {
     
-    //추후 db에서 받아와야함.
-    //label을 text field로 바꿔야 할듯?
-    //TODO
-    var cellTitle = ["title1","title2","title3"]
-    var cellContents = ["a","b","c"]
-    var cellImage = ["1.jpeg","2.jpeg","3.jpeg"]
-    
-    var text: [NSManagedObject] = []
-    
+    var app: [NSManagedObject] = []
+
     var titleTmpInViewController: String = ""
     
     
@@ -27,16 +20,31 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
+        super.viewWillAppear(animated)
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "AppData")
+        do {
+          app = try managedContext.fetch(fetchRequest)
+          self.tableView.reloadData()
+        } catch let error as NSError {
+          print("Could not fetch. \(error), \(error.userInfo)")
+        }
     }
     
     @IBAction func addBtn(_ sender: UIBarButtonItem) {
-        
+
         let alertController = UIAlertController(title: "title", message: "제목입력 ", preferredStyle: .alert)
                alertController.addTextField(configurationHandler: {
                (textField) in textField.placeholder = "제목 입력 "
@@ -48,11 +56,8 @@ class ViewController: UIViewController {
                    let textField = alertController.textFields![0]
                    if let newName = textField.text, !newName.isEmpty {
                         self.titleTmpInViewController = newName
-                        self.cellTitle.insert(newName, at: 0)
-                        let indexPath = IndexPath(row: 0, section: 0)
-                        self.tableView.insertRows(at: [indexPath], with: .automatic)
                         self.performSegue(withIdentifier: "ToTextView", sender: self)
-                       
+                
                    }
                }
                let cancelAction = UIAlertAction(title:"취소",style: .cancel){
@@ -79,32 +84,32 @@ class ViewController: UIViewController {
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cellTitle.count
+        return app.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let appData = app[indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableCell
-        //추후 존재하지 않는 조건부로 변경 TODO
-        if indexPath.row < 3 {
-            cell.cellImage.image = UIImage(named: cellImage[indexPath.row])
-            cell.title.text = cellTitle[indexPath.row]
-            cell.contents.text = cellContents[indexPath.row]
-        }
-        else {
-            cell.cellImage.image = UIImage(named: cellImage[0])
-            cell.title.text = cellTitle[indexPath.row]
-            cell.contents.text = cellContents[0]
-        }
+        
+        cell.title.text = appData.value(forKey: "title") as? String
+        cell.contents.text = appData.value(forKey: "content") as? String
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
-            //다른 항목 지우는 조건부추가 TODO
-            cellTitle.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let managedContext = appDelegate.persistentContainer.viewContext
+            managedContext.delete(app[indexPath.row])
+            app.remove(at: indexPath.row)
+            do {
+                try managedContext.save()
+            } catch _ {
+            }
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
