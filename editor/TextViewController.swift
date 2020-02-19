@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 class TextViewController : UIViewController {
     
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var contentField: UITextView!
+    
+    var app: [NSManagedObject] = []
 
     var titleTmp : String = ""
     
@@ -36,12 +39,15 @@ class TextViewController : UIViewController {
      let alertController = UIAlertController(title: "title", message: "저장하시겠습니까?", preferredStyle: .alert)
      let confirmAction = UIAlertAction(title: "확인", style: .default){
                      _ in
-         //TODO 확인 시 저장할것..
-            self.navigationController?.popViewController(animated: true)
+        guard let titleToSave = self.titleField.text else {return}
+        guard let contentToSave = self.contentField.text else {return}
+        
+        self.save(title: titleToSave, content: contentToSave)
+        
+        self.navigationController?.popViewController(animated: true)
                 }
      let cancelAction = UIAlertAction(title:"취소",style: .cancel){
          _ in
-            //self.navigationController?.popViewController(animated: true)
      }
      alertController.addAction(confirmAction)
      alertController.addAction(cancelAction)
@@ -49,16 +55,21 @@ class TextViewController : UIViewController {
         
     }
     
-    
-    
-    @IBAction func saveBtn(_ sender: UIBarButtonItem) {
-        //TODO 저장기능
+    func save(title: String, content: String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "AppData", in: managedContext)
+        let appData = NSManagedObject(entity: entity!, insertInto: managedContext)
+        appData.setValue(title, forKey: "title")
+        appData.setValue(content, forKey: "content")
+        
+        do {
+            try managedContext.save()
+            app.append(appData)
+            
+        } catch let error as NSError {
+            print("Not Saved. \(error)")
+        }
     }
-
-    
-    
-    
-    
-    
     
 }
