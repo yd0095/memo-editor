@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class ViewController: UIViewController {
     var cellContents = ["a","b","c"]
     var cellImage = ["1.jpeg","2.jpeg","3.jpeg"]
     
+    var text: [NSManagedObject] = []
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -77,8 +79,8 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableCell
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableCell
         //추후 존재하지 않는 조건부로 변경 TODO
         if indexPath.row < 3 {
             cell.cellImage.image = UIImage(named: cellImage[indexPath.row])
@@ -91,17 +93,6 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
             cell.contents.text = cellContents[0]
         }
         
-       
-        cell.addButtonAction = {
-            contentView -> () in
-            
-            let cell = contentView?.superview as! UITableViewCell
-            //내가 선택한 cell이 몇번째인지!! 처리할것 TODO
-            let indexPath = tableView.indexPath(for: cell)
-            
-            self.performSegue(withIdentifier: "ToTextView", sender: self)
-        }
-        
         return cell
     }
     
@@ -112,7 +103,19 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableCell
+//        //내가 선택한 cell이 몇번째인지!! 처리할것 TODO
+//        let indexPath = tableView.indexPath(for: cell)
+        
+        
+        self.performSegue(withIdentifier: "ToTextView", sender: self)
+    }
     
 }
 

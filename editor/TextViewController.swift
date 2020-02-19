@@ -10,7 +10,9 @@ import UIKit
 
 class TextViewController : UIViewController {
 
+    
     @IBAction func backBtn(_ sender: UIBarButtonItem) {
+        
      let alertController = UIAlertController(title: "title", message: "저장하시겠습니까?", preferredStyle: .alert)
      let confirmAction = UIAlertAction(title: "확인", style: .default){
                      _ in
@@ -19,7 +21,7 @@ class TextViewController : UIViewController {
                 }
      let cancelAction = UIAlertAction(title:"취소",style: .cancel){
          _ in
-            self.navigationController?.popViewController(animated: true)
+            //self.navigationController?.popViewController(animated: true)
      }
      alertController.addAction(confirmAction)
      alertController.addAction(cancelAction)
