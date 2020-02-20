@@ -28,6 +28,8 @@ class TextViewController : UIViewController {
         contentField.layer.cornerRadius = 10
         contentField.backgroundColor = .white
         
+        
+        
         //fetch
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -41,6 +43,7 @@ class TextViewController : UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(animated)
         
         if whichRow == -1 {
@@ -98,13 +101,39 @@ class TextViewController : UIViewController {
                         results![whichRow].setValue(title, forKey: "title")
                         results![whichRow].setValue(content, forKey: "content")
                     }
-                    
+                    whichRow = -1
                 }
             
             }
         } catch let error as NSError {
             print("Not Saved. \(error)")
         }
+    }
+    @IBAction func CameraPopView(_ sender: UIBarButtonItem) {
+        
+        //add option TODO
+        let message = NSLocalizedString("Type of Ticket", comment: "Title for the action sheet asking for the type of ticket")
+        
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Open Camera", style: .default) { [unowned self] _ in
+            //self.performSegue(withIdentifier: .CreateNewTicket, sender: LottoType.powerball.rawValue)
+        })
+        
+        alert.addAction(UIAlertAction(title: "Open My Album", style: .default) { [unowned self] _ in
+          //  self.performSegue(withIdentifier: .CreateNewTicket, sender: LottoType.megaMillions.rawValue)
+            })
+        
+        alert.addAction(UIAlertAction(title: "Open URL", style: .default) { [unowned self] _ in
+          //  self.performSegue(withIdentifier: .CreateNewTicket, sender: LottoType.luckyForLife.rawValue)
+            })
+        alert.addAction(UIAlertAction(title: "cancel", style: .cancel ) {
+            _ in
+        })
+
+        alert.popoverPresentationController?.barButtonItem = sender
+        
+        present(alert, animated: true, completion: nil)
     }
     
 }

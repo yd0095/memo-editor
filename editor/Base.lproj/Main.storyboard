@@ -164,7 +164,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="n53-cA-ZGu">
                             <connections>
-                                <action selector="saveBtn:" destination="Qh9-M8-0sw" id="HKn-fC-cgc"/>
+                                <action selector="CameraPopView:" destination="Qh9-M8-0sw" id="tau-SK-X1B"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
