@@ -8,11 +8,20 @@
 
 import UIKit
 import CoreData
+import MaterialComponents.MaterialButtons
 
-class TextViewController : UIViewController {
+class TextViewController : UIViewController ,UIScrollViewDelegate {
+    
+    
+    
     
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var contentField: UITextView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var button: UIButton!
+    
+  
+    
     
     var app: [NSManagedObject] = []
 
@@ -28,7 +37,13 @@ class TextViewController : UIViewController {
         contentField.layer.cornerRadius = 10
         contentField.backgroundColor = .white
         
-        
+        let button = MDCFloatingButton()
+        button.setImage(UIImage(named: "1.jpeg"), for: .normal)
+        button.backgroundColor = .white
+        button.setElevation(ShadowElevation(rawValue: 6), for: .normal)
+        button.addTarget(self, action: #selector(btnFloatingButtonTapped(floatingButton:)), for: .touchUpInside)
+        button.frame = CGRect(x: 30 ,y: scrollView.frame.height * 0.65, width: 48, height: 48)
+        self.view.addSubview(button)
         
         //fetch
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
@@ -41,6 +56,13 @@ class TextViewController : UIViewController {
         }
         
     }
+    @objc func btnFloatingButtonTapped(floatingButton: MDCFloatingButton){
+        floatingButton.collapse(true) {
+            floatingButton.expand(true, completion: nil)
+        }
+    }
+    
+
     
     override func viewWillAppear(_ animated: Bool) {
         

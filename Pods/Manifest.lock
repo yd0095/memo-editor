@@ -1,0 +1,60 @@
+PODS:
+  - MaterialComponents/AnimationTiming (105.0.1)
+  - MaterialComponents/Availability (105.0.1)
+  - MaterialComponents/Buttons (105.0.1):
+    - MaterialComponents/Elevation
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Shapes
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/Elevation (105.0.1):
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/Ink (105.0.1):
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/private/Application (105.0.1)
+  - MaterialComponents/private/Color (105.0.1):
+    - MaterialComponents/Availability
+  - MaterialComponents/private/Math (105.0.1)
+  - MaterialComponents/Ripple (105.0.1):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/ShadowElevations (105.0.1)
+  - MaterialComponents/ShadowLayer (105.0.1):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Shapes (105.0.1):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/Typography (105.0.1):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Math
+  - MDFInternationalization (2.0.0)
+  - MDFTextAccessibility (2.0.0)
+
+DEPENDENCIES:
+  - MaterialComponents/Buttons
+
+SPEC REPOS:
+  trunk:
+    - MaterialComponents
+    - MDFInternationalization
+    - MDFTextAccessibility
+
+SPEC CHECKSUMS:
+  MaterialComponents: cfc2fbc3a380238821ea1786d237e21b32d8514e
+  MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
+  MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
+
+PODFILE CHECKSUM: 89ed34779f93c0fb03af1f0e9a6ad15d93e5d98b
+
+COCOAPODS: 1.8.4

@@ -171,6 +171,7 @@
                     <size key="freeformSize" width="414" height="1300"/>
                     <connections>
                         <outlet property="contentField" destination="zZq-sk-1IT" id="a0R-K7-dGI"/>
+                        <outlet property="scrollView" destination="5Aq-KS-t77" id="PY2-iy-xce"/>
                         <outlet property="titleField" destination="PSG-8A-24E" id="yPN-el-s5Y"/>
                     </connections>
                 </viewController>
