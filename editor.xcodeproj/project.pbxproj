@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		11F5A4147CE3C9FDFE51156B /* Pods_editor_editorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB36FDEF12FC5F5CE2CF6D74 /* Pods_editor_editorUITests.framework */; };
 		85EAD8E2CEFFABF05BD6E876 /* Pods_editor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80292B2A93FF7BB614C1D6E /* Pods_editor.framework */; };
+		B90141F723FF71BC000C8424 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90141F623FF71BC000C8424 /* CollectionViewController.swift */; };
 		B90C0ACF23FBA4A4005B6B3A /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B90C0ACD23FBA4A4005B6B3A /* DataBase.xcdatamodeld */; };
 		B948274423F3A04A006E4EBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948274323F3A04A006E4EBD /* AppDelegate.swift */; };
 		B948274823F3A04A006E4EBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948274723F3A04A006E4EBD /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 		96CCF192D216CCEEBC745F34 /* Pods-editor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-editor.release.xcconfig"; path = "Target Support Files/Pods-editor/Pods-editor.release.xcconfig"; sourceTree = "<group>"; };
 		A26A66C256C2D82F2E541C78 /* Pods_editorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_editorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7E4A365BAD927E5C1149DB8 /* Pods-editor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-editor.debug.xcconfig"; path = "Target Support Files/Pods-editor/Pods-editor.debug.xcconfig"; sourceTree = "<group>"; };
+		B90141F623FF71BC000C8424 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		B90C0ACE23FBA4A4005B6B3A /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
 		B948274023F3A04A006E4EBD /* editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = editor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B948274323F3A04A006E4EBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,11 +140,12 @@
 			children = (
 				B948274323F3A04A006E4EBD /* AppDelegate.swift */,
 				B948274723F3A04A006E4EBD /* ViewController.swift */,
-				B948277C23F3C72A006E4EBD /* TextViewController.swift */,
-				B90C0ACD23FBA4A4005B6B3A /* DataBase.xcdatamodeld */,
 				B948277323F3AF55006E4EBD /* TableCell.swift */,
+				B948277C23F3C72A006E4EBD /* TextViewController.swift */,
+				B90141F623FF71BC000C8424 /* CollectionViewController.swift */,
 				B948274C23F3A04A006E4EBD /* Assets.xcassets */,
 				B948274923F3A04A006E4EBD /* Main.storyboard */,
+				B90C0ACD23FBA4A4005B6B3A /* DataBase.xcdatamodeld */,
 				B948274E23F3A04A006E4EBD /* LaunchScreen.storyboard */,
 				B948275123F3A04A006E4EBD /* Info.plist */,
 				B948277523F3B142006E4EBD /* image */,
@@ -188,7 +191,6 @@
 				53A079DD48D9532BFC29AF3A /* Pods-editorTests.debug.xcconfig */,
 				5A9456D22FA3CC36DB39584D /* Pods-editorTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -434,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B90141F723FF71BC000C8424 /* CollectionViewController.swift in Sources */,
 				B948277423F3AF55006E4EBD /* TableCell.swift in Sources */,
 				B948274823F3A04A006E4EBD /* ViewController.swift in Sources */,
 				B90C0ACF23FBA4A4005B6B3A /* DataBase.xcdatamodeld in Sources */,

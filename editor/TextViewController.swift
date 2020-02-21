@@ -12,16 +12,11 @@ import MaterialComponents.MaterialButtons
 
 class TextViewController : UIViewController ,UIScrollViewDelegate {
     
-    
-    
-    
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var contentField: UITextView!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var button: UIButton!
     
-  
-    
+    @IBOutlet var button: MDCFloatingButton!
     
     var app: [NSManagedObject] = []
 
@@ -36,14 +31,15 @@ class TextViewController : UIViewController ,UIScrollViewDelegate {
         contentField.layer.borderColor = UIColor.black.cgColor
         contentField.layer.cornerRadius = 10
         contentField.backgroundColor = .white
-        
-        let button = MDCFloatingButton()
-        button.setImage(UIImage(named: "1.jpeg"), for: .normal)
+    
+       // button.setImage(UIImage(named: "1.jpeg"), for: .normal)
         button.backgroundColor = .white
-        button.setElevation(ShadowElevation(rawValue: 6), for: .normal)
+        //button.setElevation(ShadowElevation(rawValue: 6), for: .normal)
         button.addTarget(self, action: #selector(btnFloatingButtonTapped(floatingButton:)), for: .touchUpInside)
         button.frame = CGRect(x: 30 ,y: scrollView.frame.height * 0.65, width: 48, height: 48)
         self.view.addSubview(button)
+        
+        
         
         //fetch
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
@@ -60,9 +56,8 @@ class TextViewController : UIViewController ,UIScrollViewDelegate {
         floatingButton.collapse(true) {
             floatingButton.expand(true, completion: nil)
         }
+        performSegue(withIdentifier: "popover", sender: floatingButton)
     }
-    
-
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -157,5 +152,22 @@ class TextViewController : UIViewController ,UIScrollViewDelegate {
         
         present(alert, animated: true, completion: nil)
     }
+    
+}
+extension TextViewController : UIPopoverPresentationControllerDelegate {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if segue.identifier == "popover" {
+               let popoverViewController = segue.destination
+               popoverViewController.preferredContentSize = CGSize(width: 380, height: 120)
+               popoverViewController.popoverPresentationController?.delegate = self
+               
+           }
+
+       }
+       func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+              return UIModalPresentationStyle.none
+          }
+    
     
 }
