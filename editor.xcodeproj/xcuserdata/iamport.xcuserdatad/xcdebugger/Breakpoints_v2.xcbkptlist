@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "23138456-0244-4776-9F06-573DC2AFC402"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F04B4983-3CDC-4F23-ABCA-EAB53EF311E7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "editor/TableCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "TableCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "F04B4983-3CDC-4F23-ABCA-EAB53EF311E7 - 94b03e505463e8cb"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "editor.TableCell.cellImage.getter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "editor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iamport/Source/editor/editor/TableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "F04B4983-3CDC-4F23-ABCA-EAB53EF311E7 - d1744f2891d01f57"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "editor.TableCell.cellImage.setter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "editor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iamport/Source/editor/editor/TableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "F04B4983-3CDC-4F23-ABCA-EAB53EF311E7 - b3b3a93a134c1dae"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "editor.TableCell.cellImage.modify : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "editor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iamport/Source/editor/editor/TableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "67">
+               </Location>
+               <Location
+                  uuid = "F04B4983-3CDC-4F23-ABCA-EAB53EF311E7 - 6500ef2676ff4f39"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "editor.TableCell.cellImage.modify : Swift.Optional&lt;__C.UIImageView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "editor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iamport/Source/editor/editor/TableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "F04B4983-3CDC-4F23-ABCA-EAB53EF311E7 - b9ddf7c7554be12b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "editor.TableCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; editor.TableCell"
+                  moduleName = "editor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iamport/Source/editor/editor/TableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "182">
+               </Location>
+               <Location
+                  uuid = "F04B4983-3CDC-4F23-ABCA-EAB53EF311E7 - 3bdfdd4dad943b95"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "editor.TableCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;editor.TableCell&gt;"
+                  moduleName = "editor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iamport/Source/editor/editor/TableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "119">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "84F5A5E9-C4FB-4B53-83A2-5E9037E96758"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "editor/TableCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "TableCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "84F5A5E9-C4FB-4B53-83A2-5E9037E96758 - ccd9b1e878e07f92"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "editor.TableCell.title.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "editor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iamport/Source/editor/editor/TableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "84F5A5E9-C4FB-4B53-83A2-5E9037E96758 - 36cbf55d3f06239e"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "editor.TableCell.title.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "editor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iamport/Source/editor/editor/TableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "84F5A5E9-C4FB-4B53-83A2-5E9037E96758 - 2f57e06de4a22491"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "editor.TableCell.title.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "editor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iamport/Source/editor/editor/TableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "67">
+               </Location>
+               <Location
+                  uuid = "84F5A5E9-C4FB-4B53-83A2-5E9037E96758 - 7c720330b33cce9e"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "editor.TableCell.title.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "editor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iamport/Source/editor/editor/TableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "84F5A5E9-C4FB-4B53-83A2-5E9037E96758 - b9ddf7c7554be12b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "editor.TableCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; editor.TableCell"
+                  moduleName = "editor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iamport/Source/editor/editor/TableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "276">
+               </Location>
+               <Location
+                  uuid = "84F5A5E9-C4FB-4B53-83A2-5E9037E96758 - 3bdfdd4dad943b95"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "editor.TableCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;editor.TableCell&gt;"
+                  moduleName = "editor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iamport/Source/editor/editor/TableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "214">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BFCF5417-E941-41A9-823A-F2CACAE4298C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "editor/TableCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "TableCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "BFCF5417-E941-41A9-823A-F2CACAE4298C - 8cbd20ac5e12dc3"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "editor.TableCell.contents.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "editor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iamport/Source/editor/editor/TableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "BFCF5417-E941-41A9-823A-F2CACAE4298C - 4db0525c3c0691cf"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "editor.TableCell.contents.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "editor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iamport/Source/editor/editor/TableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "BFCF5417-E941-41A9-823A-F2CACAE4298C - e9cd8e1029a292de"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "editor.TableCell.contents.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "editor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iamport/Source/editor/editor/TableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "67">
+               </Location>
+               <Location
+                  uuid = "BFCF5417-E941-41A9-823A-F2CACAE4298C - e82177f671cf22ad"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "editor.TableCell.contents.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "editor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iamport/Source/editor/editor/TableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "BFCF5417-E941-41A9-823A-F2CACAE4298C - b9ddf7c7554be12b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "editor.TableCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; editor.TableCell"
+                  moduleName = "editor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iamport/Source/editor/editor/TableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "375">
+               </Location>
+               <Location
+                  uuid = "BFCF5417-E941-41A9-823A-F2CACAE4298C - 3bdfdd4dad943b95"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "editor.TableCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;editor.TableCell&gt;"
+                  moduleName = "editor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iamport/Source/editor/editor/TableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "313">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2417AFD6-BB11-493F-B55E-576208F19E90"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "editor/TableCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "TableCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "2417AFD6-BB11-493F-B55E-576208F19E90 - b9ddf7c7554be12b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "editor.TableCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; editor.TableCell"
+                  moduleName = "editor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iamport/Source/editor/editor/TableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "474">
+               </Location>
+               <Location
+                  uuid = "2417AFD6-BB11-493F-B55E-576208F19E90 - 3bdfdd4dad943b95"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "editor.TableCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;editor.TableCell&gt;"
+                  moduleName = "editor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iamport/Source/editor/editor/TableCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "412">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EB19886A-4859-4D1E-8DD4-46AF41611AE2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "editor/TextViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "btnFloatingButtonTapped(floatingButton:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5B4038D4-DEBB-4A2B-AC20-9A5CC76D47DC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "editor/TextViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+<<<<<<< HEAD
+            landmarkName = "backBtn(_:)"
+            landmarkType = "7">
+=======
+            landmarkName = "TextViewController"
+            landmarkType = "3">
+>>>>>>> feature/camera
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6249CFE5-42B6-44E6-A49B-4DF036793614"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "editor/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "delBtn(_:)"
+<<<<<<< HEAD
+=======
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1E9A1D35-A8FF-4798-AA75-02D880E92550"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "editor/TextViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "TextViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AA4F3B43-9BFA-4881-9FB9-4E1F13D270D0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "editor/TextViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "viewWillAppear(_:)"
+>>>>>>> feature/camera
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+<<<<<<< HEAD
+            uuid = "1E9A1D35-A8FF-4798-AA75-02D880E92550"
+=======
+            uuid = "50952FC4-146C-4AED-A466-010FDBDFDCE6"
+>>>>>>> feature/camera
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "editor/TextViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "viewDidLoad()"
+=======
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "viewWillAppear(_:)"
+>>>>>>> feature/camera
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+<<<<<<< HEAD
+            uuid = "AA4F3B43-9BFA-4881-9FB9-4E1F13D270D0"
+=======
+            uuid = "BDDC020E-4411-4D33-8399-0662CF1351A3"
+>>>>>>> feature/camera
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "editor/TextViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "backBtn(_:)"
+            landmarkType = "7">
+=======
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "TextViewController"
+            landmarkType = "3">
+>>>>>>> feature/camera
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "580760A8-153A-4F8F-8E69-A68EEAA3570A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "editor/TextViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "backBtn(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BDDC020E-4411-4D33-8399-0662CF1351A3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "editor/TextViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+=======
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+>>>>>>> feature/camera
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+<<<<<<< HEAD
+            uuid = "580760A8-153A-4F8F-8E69-A68EEAA3570A"
+=======
+            uuid = "AA1A6E90-D37C-4092-ABA4-B595F83EC6AA"
+>>>>>>> feature/camera
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "editor/TextViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+=======
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+>>>>>>> feature/camera
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+<<<<<<< HEAD
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AA1A6E90-D37C-4092-ABA4-B595F83EC6AA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "editor/TextViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "backBtn(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+=======
+>>>>>>> feature/camera
+   </Breakpoints>
+</Bucket>
