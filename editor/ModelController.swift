@@ -104,27 +104,41 @@ class ModelController {
         }
     }
     
-    func deleteImageObject(imageIndex: Int) {
-        guard images.indices.contains(imageIndex) && savedObjects.indices.contains(imageIndex) else { return }
+    func deleteImageObject(imageIndex: Int, whichRow2: Int) {
+        guard images.indices.contains(imageIndex) else { return }
         
-        let imageObjectToDelete = savedObjects[imageIndex] as! Image
-        let imageName = imageObjectToDelete.imageName
+        guard let name = savedObjects[whichRow2].value(forKey: "imageName") as! String? else {return}
+        var nameList = name.components(separatedBy: "&")
         
-        do {
-            managedContext.delete(imageObjectToDelete)
-            
-            try managedContext.save()
-            
-            if let imageName = imageName {
-                ImageController.shared.deleteImage(imageName: imageName)
-            }
-            
-            savedObjects.remove(at: imageIndex)
-            images.remove(at: imageIndex)
-            
-            print("Image object was deleted.")
+        let imageName = nameList[imageIndex]
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Image")
+        
+               do {
+                   let results = try managedContext.fetch(fetchRequest) as? [NSManagedObject]
+                if results?.count != 0 {
+                    ImageController.shared.deleteImage(imageName: imageName)
+                    nameList.remove(at: imageIndex)
+                    var nameTmp = ""
+                    for i in nameList {
+                        nameTmp += i
+                        nameTmp += "&"
+                    }
+                    nameTmp.remove(at: nameTmp.endIndex)
+                        
+                    results![whichRow2].setValue(nameTmp, forKey: "imageName")
+                    print("Image object was deleted.")
+                }
         } catch let error as NSError {
             print("Could not delete image object: \(error)")
+        }
+        
+        do {
+            try managedContext.save()
+            
+            print("\(imageName) was deleted.")
+        } catch let error as NSError {
+            print("Could not delete new image object: \(error)")
         }
     }
     
