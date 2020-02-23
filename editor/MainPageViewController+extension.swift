@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+//MARK: - Table delegate methods
 
-extension ViewController : UITableViewDelegate, UITableViewDataSource {
+extension MainPageViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return app.count
@@ -57,7 +58,11 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
 }
-extension ViewController {
+
+
+//MARK: - segue 변경 시 실행되는 prepare
+
+extension MainPageViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -74,9 +79,13 @@ extension ViewController {
             self.whichRow = -1
         }
     }
+}
 
-    func alertAddAction() {
-        
+
+//MARK: - table의 add,del action
+
+extension  MainPageViewController {
+func alertAddAction() {
         let alertController = UIAlertController(title: "추가", message: "제목입력 ", preferredStyle: .alert)
         alertController.addTextField(configurationHandler: {
             (textField) in textField.placeholder = "제목 입력 "
@@ -112,7 +121,12 @@ extension ViewController {
             }
                     
     }
-    
+}
+
+
+//MARK: - AppData entity를 위한 fetch
+
+extension MainPageViewController {
     func fetch() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -126,7 +140,6 @@ extension ViewController {
           print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
-    
 }
 
     
