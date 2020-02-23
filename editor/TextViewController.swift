@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import MaterialComponents.MaterialButtons
+import MobileCoreServices
 
 class TextViewController : UIViewController ,UIScrollViewDelegate {
     
@@ -17,6 +18,11 @@ class TextViewController : UIViewController ,UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet var button: MDCFloatingButton!
+    
+    //imagepicker
+    let imagePicker: UIImagePickerController! = UIImagePickerController()
+    var captureImage: UIImage!
+    var flagImageSave = false
     
     var app: [NSManagedObject] = []
 
@@ -32,13 +38,10 @@ class TextViewController : UIViewController ,UIScrollViewDelegate {
         contentField.layer.cornerRadius = 10
         contentField.backgroundColor = .white
     
-       // button.setImage(UIImage(named: "1.jpeg"), for: .normal)
         button.backgroundColor = .white
-        //button.setElevation(ShadowElevation(rawValue: 6), for: .normal)
         button.addTarget(self, action: #selector(btnFloatingButtonTapped(floatingButton:)), for: .touchUpInside)
-        button.frame = CGRect(x: 30 ,y: scrollView.frame.height * 0.65, width: 48, height: 48)
+        button.frame = CGRect(x: 30 ,y: view.frame.height * 0.9, width: 48, height: 48)
         self.view.addSubview(button)
-        
         
         
         //fetch
@@ -126,19 +129,62 @@ class TextViewController : UIViewController ,UIScrollViewDelegate {
             print("Not Saved. \(error)")
         }
     }
+    
+    
+}
+extension TextViewController : UIPopoverPresentationControllerDelegate {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if segue.identifier == "popover" {
+               let popoverViewController = segue.destination
+               popoverViewController.preferredContentSize = CGSize(width: self.view.frame.width * 0.5, height: self.view.frame.height * 0.1)
+               popoverViewController.popoverPresentationController?.delegate = self
+            
+               
+           }
+
+       }
+       func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+              return UIModalPresentationStyle.none
+          }
+    
+    
+}
+extension TextViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     @IBAction func CameraPopView(_ sender: UIBarButtonItem) {
         
         //add option TODO
-        let message = NSLocalizedString("Type of Ticket", comment: "Title for the action sheet asking for the type of ticket")
+        let message = NSLocalizedString("이미지 불러오기", comment: "어디서 이미지를 불러올 건가요?")
         
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Open Camera", style: .default) { [unowned self] _ in
-            //self.performSegue(withIdentifier: .CreateNewTicket, sender: LottoType.powerball.rawValue)
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                self.flagImageSave = true
+                self.imagePicker.delegate = self
+                self.imagePicker.sourceType = .camera
+                self.imagePicker.mediaTypes = [kUTTypeImage as String]
+                self.imagePicker.allowsEditing = false
+                
+                self.present(self.imagePicker, animated: true, completion: nil)
+                
+            }
+            
         })
         
         alert.addAction(UIAlertAction(title: "Open My Album", style: .default) { [unowned self] _ in
-          //  self.performSegue(withIdentifier: .CreateNewTicket, sender: LottoType.megaMillions.rawValue)
+              if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                self.flagImageSave = false
+                  
+                self.imagePicker.delegate = self
+                self.imagePicker.sourceType = .photoLibrary
+                self.imagePicker.mediaTypes = [kUTTypeImage as String]
+                self.imagePicker.allowsEditing = true
+                  
+                self.present(self.imagePicker, animated: true, completion: nil)
+              }
+            
             })
         
         alert.addAction(UIAlertAction(title: "Open URL", style: .default) { [unowned self] _ in
@@ -153,21 +199,24 @@ class TextViewController : UIViewController ,UIScrollViewDelegate {
         present(alert, animated: true, completion: nil)
     }
     
-}
-extension TextViewController : UIPopoverPresentationControllerDelegate {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! NSString
+        print(mediaType)
+        
+        if mediaType.isEqual(to: kUTTypeImage as NSString as String) {
+            captureImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+            
+            if flagImageSave {
+                UIImageWriteToSavedPhotosAlbum(captureImage, self, nil, nil)
+            }
+            
+            //todo 이걸 coredata로 저장
+            //imageView.image = captureImage
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           if segue.identifier == "popover" {
-               let popoverViewController = segue.destination
-               popoverViewController.preferredContentSize = CGSize(width: 380, height: 120)
-               popoverViewController.popoverPresentationController?.delegate = self
-               
-           }
-
-       }
-       func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-              return UIModalPresentationStyle.none
-          }
     
     
 }
