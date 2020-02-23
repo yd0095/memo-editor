@@ -191,7 +191,39 @@ extension TextViewController : UIImagePickerControllerDelegate, UINavigationCont
             })
         
         alert.addAction(UIAlertAction(title: "Open URL", style: .default) { [unowned self] _ in
-          //  self.performSegue(withIdentifier: .CreateNewTicket, sender: LottoType.luckyForLife.rawValue)
+               let alertController = UIAlertController(title: "추가", message: "URL입력 ", preferredStyle: .alert)
+                alertController.addTextField(configurationHandler: {
+                    (textField) in textField.placeholder = "URL 입력 "
+                      })
+                      
+                      let confirmAction = UIAlertAction(title: "확인", style: .default) {
+                          _ in
+                        do{
+                            let textField = alertController.textFields![0]
+                            if let urlString = textField.text, !urlString.isEmpty{
+                                let url = URL(string: urlString)
+                                let data = try Data(contentsOf: url!)
+                                self.captureImage = UIImage(data: data)
+                                self.modelController.saveImageObject(image: self.captureImage,whichRow: self.whichRow)
+                            }
+                        } catch {
+                            let alertC = UIAlertController(title: "오류", message: "URL오류입니다.", preferredStyle: .alert)
+                            let cancelAction = UIAlertAction(title:"취소",style: .cancel){
+                                _ in
+                            }
+                            alertC.addAction(cancelAction)
+                            self.present(alertC, animated: true, completion: nil)
+                            
+                        }
+                      }
+                      let cancelAction = UIAlertAction(title:"취소",style: .cancel){
+                          _ in
+                      }
+                      alertController.addAction(confirmAction)
+                      alertController.addAction(cancelAction)
+                      
+                      self.present(alertController, animated: true, completion: nil)
+
             })
         alert.addAction(UIAlertAction(title: "cancel", style: .cancel ) {
             _ in
@@ -219,6 +251,12 @@ extension TextViewController : UIImagePickerControllerDelegate, UINavigationCont
         }
         self.dismiss(animated: true, completion: nil)
     }
+  
+}
+
+extension TextViewController {
+    
+    
     
     
     

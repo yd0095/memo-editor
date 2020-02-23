@@ -26,6 +26,9 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         cell.title.text = appData.value(forKey: "title") as? String
         cell.contents.text = appData.value(forKey: "content") as? String
         
+        if modelController.images.count != 0 {
+            cell.cellImage.image = modelController.images[0]
+        }
         return cell
     }
     
@@ -37,6 +40,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
             app.remove(at: indexPath.row)
             do {
                 try managedContext.save()
+                self.whichRow = -1
             } catch _ {
             }
             self.tableView.deleteRows(at: [indexPath], with: .fade)

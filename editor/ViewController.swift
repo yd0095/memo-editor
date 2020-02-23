@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     var app: [NSManagedObject] = []
 
     var titleTmpInViewController: String = ""
-    
+    let modelController = ModelController()
     var whichRow = -1
     
     @IBOutlet weak var tableView: UITableView!
@@ -32,9 +32,11 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
-        
         fetch()
-        
+        for i in 0 ..< whichRow {
+            modelController.fetchImageObjects(whichRow2: i)
+        }
+        tableView.reloadData()
     }
 
     
