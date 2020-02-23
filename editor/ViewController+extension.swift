@@ -57,10 +57,13 @@ extension ViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        //add
         if segue.identifier == "ToTextView" {
             guard let toText = segue.destination as? TextViewController else { return }
             toText.titleTmp = titleTmpInViewController
+            toText.whichRow = self.whichRow
         }
+        //update
         else if segue.identifier == "ToTextView2" {
             guard let toText = segue.destination as? TextViewController else { return }
             toText.whichRow = self.whichRow
@@ -112,7 +115,9 @@ extension ViewController {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "AppData")
         do {
           app = try managedContext.fetch(fetchRequest)
+          self.whichRow = app.count
           self.tableView.reloadData()
+
         } catch let error as NSError {
           print("Could not fetch. \(error), \(error.userInfo)")
         }

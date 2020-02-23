@@ -13,6 +13,8 @@ class CollectionViewController: UIViewController , UIPopoverPresentationControll
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var whichRow = -1
+    
 
     let entityName = "AppData"
     let modelController = ModelController()
@@ -21,7 +23,7 @@ class CollectionViewController: UIViewController , UIPopoverPresentationControll
         super.viewDidLoad()
     }
     override func viewWillAppear(_ animated: Bool) {
-        modelController.fetchImageObjects()
+        modelController.fetchImageObjects(whichRow2: self.whichRow)
     }
     
 }

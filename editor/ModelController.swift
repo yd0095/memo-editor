@@ -13,7 +13,7 @@ class ModelController {
     
     static let shared = ModelController()
 
-    let entityName = "AppData"
+    let entityName = "Image"
 
     public var savedObjects = [NSManagedObject]()
     public var images = [UIImage]()
@@ -22,11 +22,10 @@ class ModelController {
     init() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         managedContext = appDelegate.persistentContainer.viewContext
-        
-        fetchImageObjects()
+        //fetchImageObjects()
     }
     
-    func fetchImageObjects() {
+    func fetchImageObjects(whichRow2: Int) {
         let imageObjectRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
         
         do {
@@ -34,12 +33,24 @@ class ModelController {
             
             images.removeAll()
             
-            for imageObject in savedObjects {
-                let savedImageObject = imageObject as! AppData
-                
-                guard savedImageObject.imageName != nil else { return }
-                
-                let storedImage = ImageController.shared.fetchImage(imageName: savedImageObject.imageName!)
+            // name = name1&name2&name3
+
+            if savedObjects.count == 0 {
+                return
+            }
+            if whichRow2 == savedObjects.count {
+                return
+            }
+            if savedObjects[whichRow2].value(forKey: "imageName") == nil {
+                return
+            }
+            guard let name = savedObjects[whichRow2].value(forKey: "imageName") as! String? else {return}
+            
+            let nameList = name.components(separatedBy: "&")
+            
+            for imageObject in nameList {
+
+                let storedImage = ImageController.shared.fetchImage(imageName: imageObject)
                 
                 if let storedImage = storedImage {
                     images.append(storedImage)
@@ -54,16 +65,29 @@ class ModelController {
         let imageName = ImageController.shared.saveImage(image: image)
         
         if let imageName = imageName {
-//                   guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-//                   let managedContext = appDelegate.persistentContainer.viewContext
-                   let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "AppData")
+                   let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Image")
             
                    do {
                        let results = try managedContext.fetch(fetchRequest) as? [NSManagedObject]
-                       
                        if results?.count != 0 {
-                           results![whichRow].setValue(imageName, forKey: "imageName")
+                        if whichRow != results?.count{
+                            var nameTmp = results![whichRow].value(forKey: "imageName") as! String
+                            nameTmp += "&"
+                            nameTmp += imageName
+                            results![whichRow].setValue(nameTmp, forKey: "imageName")
+                        } else {
+                            let coreDataEntity = NSEntityDescription.entity(forEntityName: entityName, in: managedContext)
+                            let newImageEntity = NSManagedObject(entity: coreDataEntity!, insertInto: managedContext) as! Image
+                            
+                            newImageEntity.imageName = imageName
                         }
+                       } else {
+                        let coreDataEntity = NSEntityDescription.entity(forEntityName: entityName, in: managedContext)
+                        let newImageEntity = NSManagedObject(entity: coreDataEntity!, insertInto: managedContext) as! Image
+                        
+                        newImageEntity.imageName = imageName
+                    }
+                        
                    } catch let error as NSError {
                        print("Not Saved. \(error)")
                    }
@@ -83,7 +107,7 @@ class ModelController {
     func deleteImageObject(imageIndex: Int) {
         guard images.indices.contains(imageIndex) && savedObjects.indices.contains(imageIndex) else { return }
         
-        let imageObjectToDelete = savedObjects[imageIndex] as! AppData
+        let imageObjectToDelete = savedObjects[imageIndex] as! Image
         let imageName = imageObjectToDelete.imageName
         
         do {

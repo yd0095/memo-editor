@@ -48,7 +48,6 @@ class TextViewController : UIViewController ,UIScrollViewDelegate {
         
         
         //fetch
-        modelController.fetchImageObjects()
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -71,7 +70,7 @@ class TextViewController : UIViewController ,UIScrollViewDelegate {
         
         super.viewWillAppear(animated)
         
-        if whichRow == -1 {
+        if whichRow == app.count {
             titleField.text = titleTmp
         } else {
             let appData = app[whichRow]
@@ -104,7 +103,7 @@ class TextViewController : UIViewController ,UIScrollViewDelegate {
     func save(title: String, content: String) {
 
         do {
-            if whichRow == -1 {
+            if whichRow == app.count {
                 guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
                 let managedContext = appDelegate.persistentContainer.viewContext
                 let entity = NSEntityDescription.entity(forEntityName: "AppData", in: managedContext)
@@ -141,10 +140,10 @@ extension TextViewController : UIPopoverPresentationControllerDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            if segue.identifier == "popover" {
-               let popoverViewController = segue.destination
+               let popoverViewController = segue.destination as! CollectionViewController
                popoverViewController.preferredContentSize = CGSize(width: self.view.frame.width * 0.9, height: self.view.frame.height * 0.2)
+               popoverViewController.whichRow = self.whichRow
                popoverViewController.popoverPresentationController?.delegate = self
-               
            }
 
        }
