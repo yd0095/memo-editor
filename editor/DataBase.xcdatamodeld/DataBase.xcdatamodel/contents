@@ -4,7 +4,11 @@
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Image" representedClassName="Image" syncable="YES" codeGenerationType="class">
+        <attribute name="imageName" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="AppData" positionX="-54" positionY="-9" width="128" height="73"/>
+        <element name="Image" positionX="-54" positionY="18" width="128" height="58"/>
     </elements>
 </model>

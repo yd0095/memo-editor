@@ -8,11 +8,24 @@
 
 import UIKit
 import CoreData
+import MaterialComponents.MaterialButtons
+import MobileCoreServices
 
-class TextViewController : UIViewController {
+class TextViewController : UIViewController ,UIScrollViewDelegate {
     
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var contentField: UITextView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet var button: MDCFloatingButton!
+    
+    //save image
+    let modelController = ModelController()
+    
+    //imagepicker
+    let imagePicker: UIImagePickerController! = UIImagePickerController()
+    var captureImage: UIImage!
+    var flagImageSave = false
     
     var app: [NSManagedObject] = []
 
@@ -22,28 +35,32 @@ class TextViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //textView의 모양세팅
+        textViewSetting()
         
-        contentField.layer.borderWidth = 1.0
-        contentField.layer.borderColor = UIColor.black.cgColor
-        contentField.layer.cornerRadius = 10
-        contentField.backgroundColor = .white
+        //set buttonAction
+        buttonSetting()
         
         //fetch
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "AppData")
-        do {
-          app = try managedContext.fetch(fetchRequest)
-        } catch let error as NSError {
-          print("Could not fetch. \(error), \(error.userInfo)")
-        }
+        fetch()
         
+        
+    }
+    //버튼의 클릭액션 + segue이동
+    @objc func btnFloatingButtonTapped(floatingButton: MDCFloatingButton){
+        floatingButton.collapse(true) {
+            floatingButton.expand(true, completion: nil)
+        }
+        //To popover
+        performSegue(withIdentifier: "popover", sender: floatingButton)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(animated)
         
-        if whichRow == -1 {
+        //제목과 저장된 컨텐츠 불러오기
+        if whichRow == app.count {
             titleField.text = titleTmp
         } else {
             let appData = app[whichRow]
@@ -53,58 +70,8 @@ class TextViewController : UIViewController {
     }
     
     @IBAction func backBtn(_ sender: UIBarButtonItem) {
-        
-     let alertController = UIAlertController(title: "title", message: "저장하시겠습니까?", preferredStyle: .alert)
-     let confirmAction = UIAlertAction(title: "확인", style: .default){
-                     _ in
-        guard let titleToSave = self.titleField.text else {return}
-        guard let contentToSave = self.contentField.text else {return}
-        
-        self.save(title: titleToSave, content: contentToSave)
-        
-        self.navigationController?.popViewController(animated: true)
-                }
-     let cancelAction = UIAlertAction(title:"취소",style: .cancel){
-         _ in
-     }
-     alertController.addAction(confirmAction)
-     alertController.addAction(cancelAction)
-     self.present(alertController, animated: true, completion: nil)
-        
+        alertForBackAction()
     }
-    
-    func save(title: String, content: String) {
-
-        do {
-            if whichRow == -1 {
-                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-                let managedContext = appDelegate.persistentContainer.viewContext
-                let entity = NSEntityDescription.entity(forEntityName: "AppData", in: managedContext)
-                let appData = NSManagedObject(entity: entity!, insertInto: managedContext)
-                appData.setValue(title, forKey: "title")
-                appData.setValue(content, forKey: "content")
-                
-                try managedContext.save()
-            }
-            else {
-                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-                let managedContext = appDelegate.persistentContainer.viewContext
-                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "AppData")
-         
-                do {
-                    let results = try managedContext.fetch(fetchRequest) as? [NSManagedObject]
-                    
-                    if results?.count != 0 {
-                        results![whichRow].setValue(title, forKey: "title")
-                        results![whichRow].setValue(content, forKey: "content")
-                    }
-                    
-                }
-            
-            }
-        } catch let error as NSError {
-            print("Not Saved. \(error)")
-        }
-    }
-    
+   
 }
+

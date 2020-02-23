@@ -16,7 +16,11 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
             endingLineNumber = "55"
+<<<<<<< HEAD
             landmarkName = "backBtn(_:)"
+=======
+            landmarkName = "btnFloatingButtonTapped(floatingButton:)"
+>>>>>>> feature/camera
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -32,7 +36,11 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
             endingLineNumber = "53"
+<<<<<<< HEAD
             landmarkName = "gesture(_:)"
+=======
+            landmarkName = "editBtn(_:)"
+>>>>>>> feature/camera
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -48,7 +56,11 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
             endingLineNumber = "53"
+<<<<<<< HEAD
             landmarkName = "gesture(_:)"
+=======
+            landmarkName = "editBtn(_:)"
+>>>>>>> feature/camera
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -64,7 +76,11 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
             endingLineNumber = "53"
+<<<<<<< HEAD
             landmarkName = "gesture(_:)"
+=======
+            landmarkName = "editBtn(_:)"
+>>>>>>> feature/camera
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -80,7 +96,11 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
             endingLineNumber = "39"
+<<<<<<< HEAD
             landmarkName = "editBtn(_:)"
+=======
+            landmarkName = "viewDidLoad()"
+>>>>>>> feature/camera
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -208,7 +228,11 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
             endingLineNumber = "53"
+<<<<<<< HEAD
             landmarkName = "gesture(_:)"
+=======
+            landmarkName = "editBtn(_:)"
+>>>>>>> feature/camera
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -224,8 +248,13 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
             endingLineNumber = "62"
+<<<<<<< HEAD
             landmarkName = "CollectionViewController"
             landmarkType = "3">
+=======
+            landmarkName = "gesture(_:)"
+            landmarkType = "7">
+>>>>>>> feature/camera
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -432,7 +461,11 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
             endingLineNumber = "64"
+<<<<<<< HEAD
             landmarkName = "btnFloatingButtonTapped(floatingButton:)"
+=======
+            landmarkName = "gesture(_:)"
+>>>>>>> feature/camera
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

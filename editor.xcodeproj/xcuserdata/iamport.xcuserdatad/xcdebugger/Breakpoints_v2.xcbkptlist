@@ -388,7 +388,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
             endingLineNumber = "56"
-            landmarkName = "backBtn(_:)"
+            landmarkName = "btnFloatingButtonTapped(floatingButton:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -404,8 +404,13 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
             endingLineNumber = "57"
+<<<<<<< HEAD
             landmarkName = "backBtn(_:)"
             landmarkType = "7">
+=======
+            landmarkName = "TextViewController"
+            landmarkType = "3">
+>>>>>>> feature/camera
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -421,6 +426,8 @@
             startingLineNumber = "57"
             endingLineNumber = "57"
             landmarkName = "delBtn(_:)"
+<<<<<<< HEAD
+=======
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -436,8 +443,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
             endingLineNumber = "35"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            landmarkName = "TextViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -452,20 +459,75 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
             endingLineNumber = "59"
-            landmarkName = "backBtn(_:)"
+            landmarkName = "viewWillAppear(_:)"
+>>>>>>> feature/camera
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+<<<<<<< HEAD
+            uuid = "1E9A1D35-A8FF-4798-AA75-02D880E92550"
+=======
             uuid = "50952FC4-146C-4AED-A466-010FDBDFDCE6"
+>>>>>>> feature/camera
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "editor/TextViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "viewDidLoad()"
+=======
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "viewWillAppear(_:)"
+>>>>>>> feature/camera
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+<<<<<<< HEAD
+            uuid = "AA4F3B43-9BFA-4881-9FB9-4E1F13D270D0"
+=======
+            uuid = "BDDC020E-4411-4D33-8399-0662CF1351A3"
+>>>>>>> feature/camera
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "editor/TextViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "backBtn(_:)"
+            landmarkType = "7">
+=======
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "TextViewController"
+            landmarkType = "3">
+>>>>>>> feature/camera
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "580760A8-153A-4F8F-8E69-A68EEAA3570A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "editor/TextViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "63"
             endingLineNumber = "63"
             landmarkName = "backBtn(_:)"
@@ -484,6 +546,10 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
             endingLineNumber = "32"
+=======
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+>>>>>>> feature/camera
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -491,19 +557,29 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+<<<<<<< HEAD
             uuid = "580760A8-153A-4F8F-8E69-A68EEAA3570A"
+=======
+            uuid = "AA1A6E90-D37C-4092-ABA4-B595F83EC6AA"
+>>>>>>> feature/camera
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "editor/TextViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "46"
             endingLineNumber = "46"
+=======
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+>>>>>>> feature/camera
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+<<<<<<< HEAD
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
@@ -520,5 +596,7 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+=======
+>>>>>>> feature/camera
    </Breakpoints>
 </Bucket>
