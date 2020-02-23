@@ -15,11 +15,11 @@ class ModelController {
 
     let entityName = "AppData"
 
-    private var savedObjects = [NSManagedObject]()
-    private var images = [UIImage]()
-    private var managedContext: NSManagedObjectContext!
+    public var savedObjects = [NSManagedObject]()
+    public var images = [UIImage]()
+    public var managedContext: NSManagedObjectContext!
     
-    private init() {
+    init() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         managedContext = appDelegate.persistentContainer.viewContext
         
@@ -50,14 +50,23 @@ class ModelController {
         }
     }
     
-    func saveImageObject(image: UIImage) {
+    func saveImageObject(image: UIImage , whichRow: Int) {
         let imageName = ImageController.shared.saveImage(image: image)
         
         if let imageName = imageName {
-            let coreDataEntity = NSEntityDescription.entity(forEntityName: entityName, in: managedContext)
-            let newImageEntity = NSManagedObject(entity: coreDataEntity!, insertInto: managedContext) as! AppData
+//                   guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+//                   let managedContext = appDelegate.persistentContainer.viewContext
+                   let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "AppData")
             
-            newImageEntity.imageName = imageName
+                   do {
+                       let results = try managedContext.fetch(fetchRequest) as? [NSManagedObject]
+                       
+                       if results?.count != 0 {
+                           results![whichRow].setValue(imageName, forKey: "imageName")
+                        }
+                   } catch let error as NSError {
+                       print("Not Saved. \(error)")
+                   }
             
             do {
                 try managedContext.save()

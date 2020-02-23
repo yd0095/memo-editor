@@ -380,7 +380,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "EB19886A-4859-4D1E-8DD4-46AF41611AE2"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "editor/TextViewController.swift"
@@ -388,40 +388,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
             endingLineNumber = "67"
-            landmarkName = "viewWillAppear(_:)"
+            landmarkName = "btnFloatingButtonTapped(floatingButton:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "EB19886A-4859-4D1E-8DD4-46AF41611AE2 - 1073762eb0260056"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "editor.TextViewController.backBtn(__C.UIBarButtonItem) -&gt; ()"
-                  moduleName = "editor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iamport/Source/editor/editor/TextViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "177">
-               </Location>
-               <Location
-                  uuid = "EB19886A-4859-4D1E-8DD4-46AF41611AE2 - 279421a90b4b4485"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.UIAlertAction) -&gt; () in editor.TextViewController.backBtn(__C.UIBarButtonItem) -&gt; ()"
-                  moduleName = "editor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/iamport/Source/editor/editor/TextViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "41">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -436,7 +404,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
             endingLineNumber = "68"
-            landmarkName = "viewWillAppear(_:)"
+            landmarkName = "btnFloatingButtonTapped(floatingButton:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -468,8 +436,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
             endingLineNumber = "35"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            landmarkName = "TextViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -556,7 +524,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "AA1A6E90-D37C-4092-ABA4-B595F83EC6AA"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "editor/TextViewController.swift"
@@ -572,7 +540,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "1AAF5835-3D38-48DA-B266-B73DC3055CE8"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "editor/TextViewController.swift"
@@ -588,7 +556,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "E2A36003-4310-4A81-A4C5-64530D812E39"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "editor/TextViewController.swift"
@@ -604,7 +572,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "310C85CA-0C21-4E3A-AA7D-D8465E1FC59E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "editor/TextViewController.swift"
@@ -620,7 +588,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D5890B11-1BB8-4D36-B3BD-5338FD6834FF"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "editor/TextViewController.swift"
@@ -636,7 +604,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "84869F29-49EC-4933-B30A-60D7CEE2130B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "editor/TextViewController.swift"
@@ -644,15 +612,15 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
             endingLineNumber = "103"
-            landmarkName = "save(title:content:)"
-            landmarkType = "7">
+            landmarkName = "TextViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F59D86C0-92E2-4BE7-8573-310F67082DA0"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "editor/TextViewController.swift"

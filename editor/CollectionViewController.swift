@@ -9,26 +9,21 @@
 import UIKit
 import CoreData
 
-class CollectionViewController: UIViewController , UIPopoverPresentationControllerDelegate {
+class CollectionViewController: UIViewController , UIPopoverPresentationControllerDelegate{
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
-    //DataBase CoreData
-    //static let shared = ModelController()
 
     let entityName = "AppData"
+    let modelController = ModelController()
 
-    private var savedObjects = [NSManagedObject]()
-    private var images = [UIImage]()
-    private var managedContext: NSManagedObjectContext!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        modelController.fetchImageObjects()
+    }
     
-
 }
 
 extension CollectionViewController : UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -39,13 +34,13 @@ extension CollectionViewController : UICollectionViewDelegateFlowLayout, UIColle
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return modelController.images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! CustomCell
         
-        cell.image.image = UIImage(named: "1.jpeg")
+        cell.image.image = modelController.images[indexPath.row]
         
         return cell
     }

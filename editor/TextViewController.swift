@@ -19,6 +19,9 @@ class TextViewController : UIViewController ,UIScrollViewDelegate {
     
     @IBOutlet var button: MDCFloatingButton!
     
+    //save image
+    let modelController = ModelController()
+    
     //imagepicker
     let imagePicker: UIImagePickerController! = UIImagePickerController()
     var captureImage: UIImage!
@@ -45,6 +48,8 @@ class TextViewController : UIViewController ,UIScrollViewDelegate {
         
         
         //fetch
+        modelController.fetchImageObjects()
+        
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "AppData")
@@ -139,7 +144,6 @@ extension TextViewController : UIPopoverPresentationControllerDelegate {
                let popoverViewController = segue.destination
                popoverViewController.preferredContentSize = CGSize(width: self.view.frame.width * 0.9, height: self.view.frame.height * 0.2)
                popoverViewController.popoverPresentationController?.delegate = self
-            
                
            }
 
@@ -212,7 +216,7 @@ extension TextViewController : UIImagePickerControllerDelegate, UINavigationCont
             }
             
             //todo 이걸 coredata로 저장
-            //imageView.image = captureImage
+            modelController.saveImageObject(image: self.captureImage,whichRow: self.whichRow)
         }
         self.dismiss(animated: true, completion: nil)
     }
