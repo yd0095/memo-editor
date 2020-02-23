@@ -125,12 +125,12 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dc3-Ca-IFa" customClass="MDCFloatingButton">
-                                                <rect key="frame" x="33" y="653" width="42" height="30"/>
+                                                <rect key="frame" x="119" y="461" width="42" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Image"/>
                                                 <connections>
                                                     <segue destination="zAn-xn-HYA" kind="popoverPresentation" identifier="popover" popoverAnchorView="Dc3-Ca-IFa" id="Drt-iF-KuK">
-                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                        <popoverArrowDirection key="popoverArrowDirection" down="YES"/>
                                                     </segue>
                                                 </connections>
                                             </button>

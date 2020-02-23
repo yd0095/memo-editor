@@ -137,7 +137,7 @@ extension TextViewController : UIPopoverPresentationControllerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            if segue.identifier == "popover" {
                let popoverViewController = segue.destination
-               popoverViewController.preferredContentSize = CGSize(width: self.view.frame.width * 0.5, height: self.view.frame.height * 0.1)
+               popoverViewController.preferredContentSize = CGSize(width: self.view.frame.width * 0.9, height: self.view.frame.height * 0.2)
                popoverViewController.popoverPresentationController?.delegate = self
             
                

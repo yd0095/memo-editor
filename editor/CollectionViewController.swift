@@ -7,14 +7,28 @@
 //
 
 import UIKit
+import CoreData
 
 class CollectionViewController: UIViewController , UIPopoverPresentationControllerDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-   override func viewDidLoad() {
-      super.viewDidLoad()
+    
+    //DataBase CoreData
+    //static let shared = ModelController()
+
+    let entityName = "AppData"
+
+    private var savedObjects = [NSManagedObject]()
+    private var images = [UIImage]()
+    private var managedContext: NSManagedObjectContext!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
+    
+
 }
 
 extension CollectionViewController : UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -35,9 +49,9 @@ extension CollectionViewController : UICollectionViewDelegateFlowLayout, UIColle
         
         return cell
     }
-    
-   
 }
+
+
 class CustomCell : UICollectionViewCell {
     @IBOutlet weak var image: UIImageView!
  
