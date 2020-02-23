@@ -58,10 +58,15 @@ class CollectionViewController: UIViewController , UIPopoverPresentationControll
         
     }
     @IBAction func gesture(_ sender: UITapGestureRecognizer) {
+        if self.buttonSwitch == true{
            let point = sender.location(in: collectionView)
            if let indexPath = collectionView?.indexPathForItem(at: point) {
                print(#function, indexPath)
+               modelController.deleteImageObject(imageIndex: indexPath.row, whichRow2: self.whichRow)
+               modelController.fetchImageObjects(whichRow2: self.whichRow)
+               collectionView.reloadData()
            }
+        }
        }
     
     @objc func btnFloatingButtonTapped(floatingButton: MDCFloatingButton){

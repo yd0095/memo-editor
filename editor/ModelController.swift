@@ -109,7 +109,9 @@ class ModelController {
         
         guard let name = savedObjects[whichRow2].value(forKey: "imageName") as! String? else {return}
         var nameList = name.components(separatedBy: "&")
-        
+        if nameList.isEmpty && !name.isEmpty {
+            nameList.append(name)
+        }
         let imageName = nameList[imageIndex]
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Image")
@@ -124,10 +126,14 @@ class ModelController {
                         nameTmp += i
                         nameTmp += "&"
                     }
-                    nameTmp.remove(at: nameTmp.endIndex)
+                    
+                    if !nameTmp.isEmpty{
+                        nameTmp.remove(at: nameTmp.index(nameTmp.endIndex, offsetBy: -1))
+                    }
                         
                     results![whichRow2].setValue(nameTmp, forKey: "imageName")
                     print("Image object was deleted.")
+
                 }
         } catch let error as NSError {
             print("Could not delete image object: \(error)")
