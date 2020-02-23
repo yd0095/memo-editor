@@ -10,6 +10,7 @@
 		11F5A4147CE3C9FDFE51156B /* Pods_editor_editorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB36FDEF12FC5F5CE2CF6D74 /* Pods_editor_editorUITests.framework */; };
 		85EAD8E2CEFFABF05BD6E876 /* Pods_editor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C80292B2A93FF7BB614C1D6E /* Pods_editor.framework */; };
 		B90141F723FF71BC000C8424 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90141F623FF71BC000C8424 /* CollectionViewController.swift */; };
+		B901420123FFC348000C8424 /* ViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B901420023FFC348000C8424 /* ViewController+extension.swift */; };
 		B90C0ACF23FBA4A4005B6B3A /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B90C0ACD23FBA4A4005B6B3A /* DataBase.xcdatamodeld */; };
 		B948274423F3A04A006E4EBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948274323F3A04A006E4EBD /* AppDelegate.swift */; };
 		B948274823F3A04A006E4EBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948274723F3A04A006E4EBD /* ViewController.swift */; };
@@ -18,7 +19,7 @@
 		B948275023F3A04A006E4EBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B948274E23F3A04A006E4EBD /* LaunchScreen.storyboard */; };
 		B948275B23F3A04B006E4EBD /* editorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948275A23F3A04B006E4EBD /* editorTests.swift */; };
 		B948276623F3A04B006E4EBD /* editorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948276523F3A04B006E4EBD /* editorUITests.swift */; };
-		B948277423F3AF55006E4EBD /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948277323F3AF55006E4EBD /* TableCell.swift */; };
+		B948277423F3AF55006E4EBD /* ViewController+TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B948277323F3AF55006E4EBD /* ViewController+TableCell.swift */; };
 		B948277723F3B169006E4EBD /* 1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B948277623F3B169006E4EBD /* 1.jpeg */; };
 		B948277923F3B172006E4EBD /* 2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B948277823F3B172006E4EBD /* 2.jpeg */; };
 		B948277B23F3B17A006E4EBD /* 3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B948277A23F3B17A006E4EBD /* 3.jpeg */; };
@@ -52,6 +53,7 @@
 		A26A66C256C2D82F2E541C78 /* Pods_editorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_editorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7E4A365BAD927E5C1149DB8 /* Pods-editor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-editor.debug.xcconfig"; path = "Target Support Files/Pods-editor/Pods-editor.debug.xcconfig"; sourceTree = "<group>"; };
 		B90141F623FF71BC000C8424 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		B901420023FFC348000C8424 /* ViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+extension.swift"; sourceTree = "<group>"; };
 		B90C0ACE23FBA4A4005B6B3A /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
 		B948274023F3A04A006E4EBD /* editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = editor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B948274323F3A04A006E4EBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +68,7 @@
 		B948276123F3A04B006E4EBD /* editorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = editorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B948276523F3A04B006E4EBD /* editorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editorUITests.swift; sourceTree = "<group>"; };
 		B948276723F3A04B006E4EBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B948277323F3AF55006E4EBD /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		B948277323F3AF55006E4EBD /* ViewController+TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+TableCell.swift"; sourceTree = "<group>"; };
 		B948277623F3B169006E4EBD /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpeg; sourceTree = "<group>"; };
 		B948277823F3B172006E4EBD /* 2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpeg; sourceTree = "<group>"; };
 		B948277A23F3B17A006E4EBD /* 3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpeg; sourceTree = "<group>"; };
@@ -140,7 +142,8 @@
 			children = (
 				B948274323F3A04A006E4EBD /* AppDelegate.swift */,
 				B948274723F3A04A006E4EBD /* ViewController.swift */,
-				B948277323F3AF55006E4EBD /* TableCell.swift */,
+				B901420023FFC348000C8424 /* ViewController+extension.swift */,
+				B948277323F3AF55006E4EBD /* ViewController+TableCell.swift */,
 				B948277C23F3C72A006E4EBD /* TextViewController.swift */,
 				B90141F623FF71BC000C8424 /* CollectionViewController.swift */,
 				B948274C23F3A04A006E4EBD /* Assets.xcassets */,
@@ -437,9 +440,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B90141F723FF71BC000C8424 /* CollectionViewController.swift in Sources */,
-				B948277423F3AF55006E4EBD /* TableCell.swift in Sources */,
+				B948277423F3AF55006E4EBD /* ViewController+TableCell.swift in Sources */,
 				B948274823F3A04A006E4EBD /* ViewController.swift in Sources */,
 				B90C0ACF23FBA4A4005B6B3A /* DataBase.xcdatamodeld in Sources */,
+				B901420123FFC348000C8424 /* ViewController+extension.swift in Sources */,
 				B948274423F3A04A006E4EBD /* AppDelegate.swift in Sources */,
 				B948277D23F3C72A006E4EBD /* TextViewController.swift in Sources */,
 			);
